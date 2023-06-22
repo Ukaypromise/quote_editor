@@ -1,13 +1,18 @@
 // Entry point for your Sass build
-.turbolinks-progress-bar{
-    background-color: #f00;
-    height: 5px;
-    // position: fixed;
-    // top: 0;
-    // left: 0;
-    // width: 100%;
-    // z-index: 9999;
-    -webkit-transition: width 0.2s ease-in-out;
-    -moz-transition: width 0.2s ease-in-out;
-    transition: width 0.2s ease-in-out;
-}
+// Mixins
+@import "mixins/media";
+
+// Configuration
+@import "config/variables";
+@import "config/reset";
+
+// Components
+@import "components/btn";
+@import "components/error_message";
+@import "components/form";
+@import "components/visually_hidden";
+@import "components/quote";
+
+// Layouts
+@import "layouts/container";
+@import "layouts/header";

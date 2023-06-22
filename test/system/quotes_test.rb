@@ -2,7 +2,7 @@ require "application_system_test_case"
 
 class QuotesTest < ApplicationSystemTestCase
   setup do
-    @quotes = quotes(:first)
+    @quote = quotes(:first)
   end
   test "Creating a new quote" do
     # When we visit the Quotes#index page
