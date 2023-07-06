@@ -53,14 +53,25 @@ jobs:
         run: |
           bundle exec rails db:prepare
 
-      - name: Run rspec tests 
+      - name: Run system tests
         env:
           PGHOST: localhost
           PGUSER: postgres
           PGPASSWORD: postgres
           RAILS_ENV: test
         run: |
-          bundle exec rspec
+          bundle exec rails db:create RAILS_ENV=test
+          bundle exec rails db:migrate RAILS_ENV=test
+          bundle exec rails test:system
+
+      # - name: Run rspec tests 
+      #   env:
+      #     PGHOST: localhost
+      #     PGUSER: postgres
+      #     PGPASSWORD: postgres
+      #     RAILS_ENV: test
+      #   run: |
+      #     bundle exec rspec
 
       - name: Run rubocop 
         run: |
